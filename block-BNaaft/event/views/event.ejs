@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container flex flex-sb">
+        <a href="/events"><button>List of event</button></a>
+        <h2 class="h2">Events</h2>
+        <a href="/events/new"> <button>Add event</button></a>
+      </div>
+    </header>
+
+    <main class="container event">
+      <div class="flex">
+        <section class="flex-48 form">
+          <div class="">
+            <h2 class="h2">Event List</h2>
+            <% events.forEach(event => {%>
+            <a href="/events/<%=event._id %> ">
+              <h2><%=event.title %></h2>
+            </a>
+
+            <%})%>
+          </div>
+        </section>
+
+        <div class="flex-48 form">
+          <section>
+            <div>
+              <h2>Category</h2>
+              <% allCategories.forEach(category => { %>
+              <a href="/categories/<%= category  %> ">
+                <button><%= category %></button>
+              </a>
+              <% }) %>
+            </div>
+          </section>
+
+          <section>
+            <div>
+              <h2>Location</h2>
+              <% allLocations.forEach(location=> { %>
+              <a href="/location/<%= location  %> ">
+                <button><%= location %></button>
+              </a>
+              <% }) %>
+            </div>
+          </section>
+          <section>
+            <div>
+              <h2>shorting date</h2>
+              <div>
+                <a href="/date/ascend"><button>Ascend</button> </a>
+                <a href="/date/descend"><button>Descend</button></a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
