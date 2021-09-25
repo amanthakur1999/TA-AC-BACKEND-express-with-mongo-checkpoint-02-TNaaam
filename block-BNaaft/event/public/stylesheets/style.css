@@ -1,0 +1,280 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  /* padding: 4rem; */
+  font-family: 'Poppins', sans-serif;
+  /* /* background-color: #9c9a96; */
+  background-color: #2f91e9;
+}
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+a {
+  text-decoration: none;
+}
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(124, 241, 231);
+  text-transform: capitalize;
+}
+.itme-c {
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+}
+.flex-sb {
+  justify-content: space-between;
+}
+.text-ac {
+  text-align: center;
+}
+.text-s {
+  text-align: start;
+}
+
+.flex-48 {
+  flex: 0 1 49%;
+  height: 72vh;
+}
+
+input,
+textarea {
+  width: 80%;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  border: 1px solid #000;
+}
+
+.form {
+  width: 50%;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
+  margin-top: 1rem;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 10px rgba(105, 104, 104, 0.972);
+}
+.h2 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: rgb(23, 56, 66);
+}
+
+/* index page */
+.welcome {
+  margin-top: 12rem;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #000;
+}
+/* event */
+.event {
+  padding-top: 3rem;
+}
+.event h2 {
+  font-size: 2rem;
+  text-transform: capitalize;
+  padding: 0.7rem 0;
+  color: #000;
+}
+.event button {
+  margin-right: 0.7rem;
+  text-transform: capitalize;
+}
+
+.category {
+  padding-top: 2rem;
+  font-size: 2rem;
+  color: #fff;
+}
+/* singleEvent */
+
+.detail h2,
+h3 {
+  padding: 0.6rem 0;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #000;
+}
+.like {
+  padding: 0.6rem 0;
+}
+.like a {
+  padding-right: 0.8rem;
+}
+
+.remark h2 {
+  padding-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+.detail button {
+  margin-top: 0.7rem;
+}
+
+.h3 {
+  font-size: 2rem;
+  color: #000;
+}
+.delete-btn {
+  background-color: rgba(146, 9, 9, 0.774);
+}
+.edit-btn {
+  background-color: rgba(0, 128, 0, 0.678);
+}
+
+header {
+  /* background-color: #d9ecf8; */
+  background-color: #ffffff;
+  padding: 2.3rem 0;
+  box-shadow: 0 0 10px rgba(105, 104, 104, 0.972);
+}
+
+span {
+  font-size: 1.5rem;
+  color: steelblue;
+  margin-right: 1rem;
+}
