@@ -25,7 +25,7 @@
       <div class="form detail">
         <% events.forEach(event => { %>
         <a href="/events/<%= event.id%> "
-          ><h2><%= event.end_date.toString().substring(0,15) %></h2></a
+          ><h2><%= event.event_category%></h2></a
         >
         <% }) %>
       </div>

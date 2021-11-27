@@ -5,13 +5,13 @@ var Remark = require('../models/remark');
 
 router.get('/:category', (req, res, next) => {
   let category = req.params.category;
-  Event.find({}).exec((err, event) => {
-    var some = event.filter((elm) => {
-      if (elm.event_category.includes(category)) {
-        return elm;
-      }
-    });
-    res.render('category', { events: some });
+  Event.find({ event_category: { $in: [category] } }).exec((err, event) => {
+    // var some = event.filter((elm) => {
+    //   if (elm.event_category.includes(category)) {
+    //     return elm;
+    //   }
+    // });
+    res.render('category', { events: event });
   });
 });
 module.exports = router;

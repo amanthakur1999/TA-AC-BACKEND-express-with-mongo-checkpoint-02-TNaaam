@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var moment = require('moment');
 var indexRouter = require('./routes/index');
 var eventRouter = require('./routes/events');
 var remarkRouter = require('./routes/remark');
@@ -20,7 +21,6 @@ mongoose.connect(
     console.log(err ? err : 'Connected to Database');
   }
 );
-
 var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

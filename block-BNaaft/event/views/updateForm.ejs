@@ -45,16 +45,22 @@
               placeholder="Enter Host"
               value="<%= event.host %> "
             /><br />
-            <!-- <input type="text" /><br /> -->
-            <label for="start_date"
-              ><%= event.start_date.toString().substring(0,15) %></label
-            >
-            <input type="date" name="start_date" placeholder="dd/mm/yyyy" />
+
+            <input
+              type="date"
+              name="start_date"
+              placeholder="dd/mm/yyyy"
+              value="<%= startDate %>"
+            />
+
             <br />
-            <label for="end_date"
-              ><%= event.end_date.toString().substring(0,15) %></label
-            >
-            <input type="date" name="end_date" placeholder="dd/mm/yyyy" />
+
+            <input
+              type="date"
+              name="end_date"
+              placeholder="dd/mm/yyyy"
+              value="<%= endDate %>"
+            />
             <br />
 
             <input
@@ -72,7 +78,6 @@
             />
             <br />
 
-            <!-- <input type="number" name="likes" placeholder="Enter likes" /> <br /> -->
             <input type="submit" />
           </form>
         </div>
