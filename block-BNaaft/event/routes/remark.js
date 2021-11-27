@@ -31,6 +31,7 @@ router.get('/:id/delete', (req, res, next) => {
 // like
 router.get('/:id/like', (req, res, next) => {
   var id = req.params.id;
+
   Remark.findByIdAndUpdate(id, { $inc: { likes: 1 } }, (err, incLikes) => {
     if (err) return next(err);
     res.redirect('/events/' + incLikes.eventId);

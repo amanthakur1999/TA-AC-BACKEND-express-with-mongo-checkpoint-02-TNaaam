@@ -24,7 +24,7 @@
       <div class="form detail">
         <% events.forEach(event => { %>
         <a href="/events/<%= event._id %> "
-          ><h2 class="h3"><%= event.start_date.toString().substring(0,15) %></a
+          ><h2 class="h3"><%= event.event_category%></h2></a
         >
         <% }) %>
       </div>
