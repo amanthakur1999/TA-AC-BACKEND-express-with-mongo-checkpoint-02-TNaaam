@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/fec47e549f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="container flex  flex-sb">
+        <a href="/events"><button>List of event</button></a>
+
+        <a href="/events/new"> <button>Add event</button></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="form">
+        <div class="detail">
+          <h2> <span> Title :</span> <%= event.title %></h2>
+          <h3> <span>Summary : </span>  <%= event.summary %></h3>
+          <h3> <span>Host : </span> <%= event.host %></h3>
+          <h3> <span>Start Date : </span> <%= event.start_date.toString().substring(0,15) %></h3>
+          <h3> <span> End Date : </span><%= event.end_date.toString().substring(0,15) %></h3>
+          <h3> <span> category : </span><%= event.event_category %></h3>
+          <h3> <span>Location : </span> <%= event.location %></h3>
+          <h3> <span>Like :</span>  <%= event.likes %></h3>
+        </div>
+        <!-- like section -->
+        <div class=" flex  like">
+
+          <a href="/events/<%=event._id %>/like"
+            > <button><i class="fas fa-thumbs-up"></i></button></i
+          ></a>
+          <a href="/events/<%=event._id %>/dislike"
+            > <button><i class="fas fa-thumbs-down"></i></button></i
+          ></a>
+        </div>
+        <div class=" flex like">
+          <a href="/events/<%=event._id %>/edit "><button class="edit-btn">Edit</button></a>
+
+          <a href="/events/<%=event._id %>/delete "> <button class="delete-btn">delete</button></a>
+        </div>
+    
+      </section>
+
+      <section>
+          <div class="form text-ac remark">
+            <h2 > <span>Add Remark</span> </h2>
+              <form action="/events/<%= event._id%>/remarks " method="POST">
+            <input type="text" name="title" placeholder="Title"> <br>
+            <input type="text" name="author" placeholder="Enter author name"> <br>
+            <!-- <input type="number" name="like" placeholder="Enter Like"> <br> -->
+            <input type="submit">
+            
+            </form>
+          </div>
+
+           <div class="form detail"> 
+             
+             <% event.remarkId.forEach(remark => {%>
+                 
+                <div>
+                    <p><%= remark.title %> </p>
+                    <p><%= remark.author %> </p>
+                    <h2><%= remark.likes%> </h2>
+                </div>
+                <div>
+                    <a href="/remarks/<%= remark._id%>/like "> <button><i class="fas fa-thumbs-up"></i></button></a>
+
+                    <a href="/remarks/<%= remark._id%>/dislike  "> <button><i class="fas fa-thumbs-down"></i></button></a>
+
+                    <a href="/remarks/<%=remark._id%>/edit"> <button class="edit-btn">Edit</button></a>
+
+                    <a href="/remarks/<%= remark._id%>/delete "> <button class="delete-btn">Delete</button></a>
+                </div>
+             <%})%>
+          </div> 
+      </section>
+    </main>
+  </body>
+</html>

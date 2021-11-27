@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <% include partials/header.ejs %>
+
+    <header>
+      <form action="/filter/" method="GET">
+        <div class="flex flex-sb container itme-c">
+          <div>
+            <label for="category">ByCategory</label>
+
+            <select id="fcategory" name="fcategory">
+              <option value="">--select--</option>
+              <% locations.forEach(event=>{%>
+
+              <option value="<%=locations%>"><%=event%></option>
+              <%})%>
+            </select>
+          </div>
+          <div>
+            <label for="location">ByLocation</label>
+            <select id="flocation" name="flocation">
+              <option value="">--select--</option>
+              <% locations.forEach(loc=> { %>
+              <option value="<%=loc%>"><%=loc%></option>
+              <%})%></select
+            ><br />
+          </div>
+          <div>
+            <label for="date">ByDate</label>
+            <select id="fdate" name="fdate">
+              <option value="latest">Latest</option>
+              <option value="oldest">Oldest</option></select
+            ><br />
+          </div>
+          <button type="submit">Filter</button>
+        </div>
+      </form>
+    </header>
+
+    <main class="container event">
+      <div class="flex">
+        <section class="flex-48 form">
+          <div class="">
+            <h2 class="h2">Event List</h2>
+            <% events.forEach(event => {%>
+            <a href="/events/<%=event._id %> ">
+              <h2><%=event.title %></h2>
+            </a>
+
+            <%})%>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
